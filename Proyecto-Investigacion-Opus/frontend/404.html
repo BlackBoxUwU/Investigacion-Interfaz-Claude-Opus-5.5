@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Redirigiendo… | Inventario de Equipos de Cómputo</title>
+  <script>
+    // Respaldo para servidores estáticos que muestran 404.html cuando la ruta
+    // no corresponde a un archivo (p. ej. /equipos/nuevo al recargar la página).
+    // Se guarda la ruta solicitada y se carga index.html, que la restaura.
+    try {
+      sessionStorage.setItem(
+        'rutaPendiente',
+        location.pathname + location.search + location.hash
+      );
+    } catch (e) { /* sin almacenamiento: se abrirá el panel general */ }
+    location.replace('/');
+  </script>
+</head>
+<body>
+  <p>Redirigiendo… Si no ocurre nada, <a href="/">vuelve al inicio</a>.</p>
+</body>
+</html>
